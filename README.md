@@ -1,6 +1,24 @@
 # Building a rangefinder made of Parkside PLEM-50-C3 laser telemeter and ESP32-CAM
 A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of binoculars, an ILI9341 2.8 inch Display and 2x ESP32-CAM to measure distance exactly on the right spot.
 
+## Components used
+<ol>
+  <li>1x Parkside PLEM-50-C3 laser telemeter (you will cut some holes in the case but it will be also be still usable as standalone)</li>
+  <li>1x side micro switch (to turn on/off the beeping speaker</li>
+  <li>(OPTIONAL) a single tap button, for external measure triggering</li>
+  <li>(OPTIONAL) 1x 2PIN JST connector (male and female) - to connect the telemeter and the external trigger button</li>
+  <li>1x 6PIN JST connector (male and female) - to connect the esp32-cam and the telemeter</li>
+  <li>2x ESP32-CAM boards with 1x camera attached</li>
+  <li>1x ESP32-CAM MB or an USB TTL-UART Adapter to upload the code (CP2101, CH340, FTDI FT232 etc)</li>
+  <li>Micro USB to USB-A for uploading the code (or USB-C if your esp-cam has it)</li>
+  <li>1x 2.8 inch ILI9341 display (touch not needed)</li>
+  <li>very thin wire to solder everything</li>
+  <li>solder iron, solder wire and flux</li>
+  <li>A pair of binoculars</li>
+  <li>3D printer and PLA filament or duct tape to attach everything together</li>
+  <li>Arduino IDE and ESP32 Library and json installed</li>
+</ol>
+
 
 ## Pinout
 
