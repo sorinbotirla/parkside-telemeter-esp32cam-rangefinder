@@ -92,6 +92,9 @@ A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of b
   </tr>
 </table>
 
+
+## Code Setup
 Due to the lack of gpio pins and not having a gpio extender, 2x esp-cam boards have been used. In this repository are 2 .ino files, cameradisplay.ino is for the esp-cam handling the camera and the display, telemeter.ino is for the esp-cam handling the telemeter data.
 
+## Wiring Setup - To Be Added
 More info to be added soon (wiring the telemeter, using the binoculars, 3d models for printing the case and mount, etc)
