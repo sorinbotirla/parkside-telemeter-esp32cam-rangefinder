@@ -1,4 +1,4 @@
-# parkside-telemeter-esp32cam-rangefinder
+# Parkside PLEM-50-C3 telemeter ESP32-CAM rangefinder
 A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of binoculars, an ILI9341 2.8 inch Display and 2x ESP32-CAM to measure distance exactly on the right spot.
 
 
@@ -73,3 +73,7 @@ A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of b
     <td>GND (Pin 1)</td>
   </tr>
 </table>
+
+Due to the lack of gpio pins and not having a gpio extender, 2x esp-cam boards have been used. In this repository are 2 .ino files, cameradisplay.ino is for the esp-cam handling the camera and the display, telemeter.ino is for the esp-cam handling the telemeter data.
+
+More info to be added soon (wiring the telemeter, using the binoculars, 3d models for printing the case and mount, etc)
