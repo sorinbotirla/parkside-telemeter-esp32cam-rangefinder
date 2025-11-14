@@ -1,0 +1,4 @@
+SDA pin 13 white
+SCL pin 2 blue
+keyoard pin 14 white/transparent
+power pin 15 red/black
