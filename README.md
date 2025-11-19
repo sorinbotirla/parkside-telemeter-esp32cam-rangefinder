@@ -24,97 +24,101 @@ A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of b
 ## Pinout
 
 <table border="1" cellpadding="6" cellspacing="0">
-    <tr>
-        <th>ILI9341 Display</th>
-        <th>ESP32-CAM (Display/Camera)</th>
-        <th>ESP32-CAM (Telemeter)</th>
-        <th>Parkside Telemeter</th>
-    </tr>
+<thead>
+<tr>
+<th>ILI9341 Display</th>
+<th>ESP32-CAM (Display/Camera)</th>
+<th>ESP32-CAM (Telemeter)</th>
+<th>Parkside Telemeter</th>
+</tr>
+</thead>
 
-    <tr>
-        <td>VCC</td>
-        <td>5V</td>
-        <td></td>
-        <td></td>
-    </tr>
+<tbody>
+<tr>
+<td>VCC</td>
+<td>5V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
 
-    <tr>
-        <td>GND</td>
-        <td>GND</td>
-        <td>GND</td>
-        <td>GND (Pin 1)</td>
-    </tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+<td>GND</td>
+<td>GND (Pin 1)</td>
+</tr>
 
-    <tr>
-        <td>MOSI</td>
-        <td>23</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>MISO</td>
-        <td>19</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>SCK</td>
-        <td>18</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>CS</td>
-        <td>17</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>DC</td>
-        <td>16</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>RST</td>
-        <td>5</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>BL</td>
-        <td>15</td>
-        <td></td>
-        <td></td>
-    </tr>
+<tr>
+<td>MOSI</td>
+<td>23</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>MISO</td>
+<td>19</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>SCK</td>
+<td>18</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>CS</td>
+<td>17</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>DC</td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>RST</td>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>BL</td>
+<td>15</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
 
-    <tr>
-        <td></td>
-        <td>13 (RX2)</td>
-        <td>16 (TX2)</td>
-        <td></td>
-    </tr>
+<tr>
+<td>&nbsp;</td>
+<td>13 (RX2)</td>
+<td>16 (TX2)</td>
+<td>&nbsp;</td>
+</tr>
 
-    <tr>
-        <td></td>
-        <td></td>
-        <td>13 (SDA)</td>
-        <td>SDA (Pin 10)</td>
-    </tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>13 (SDA)</td>
+<td>SDA (Pin 10)</td>
+</tr>
 
-    <tr>
-        <td></td>
-        <td></td>
-        <td>2 (SCL)</td>
-        <td>SCL (Pin 11)</td>
-    </tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2 (SCL)</td>
+<td>SCL (Pin 11)</td>
+</tr>
 
-    <tr>
-        <td></td>
-        <td></td>
-        <td>14 (MEASURE)</td>
-        <td>KEY (Pin 18)</td>
-    </tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>14 (MEASURE)</td>
+<td>KEY (Pin 18)</td>
+</tr>
+</tbody>
 
 </table>
 
