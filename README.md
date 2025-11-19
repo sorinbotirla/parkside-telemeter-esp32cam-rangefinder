@@ -8,7 +8,7 @@ A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of b
   <li>1x side micro switch (to turn on/off the beeping speaker</li>
   <li>(OPTIONAL) a single tap button, for external measure triggering</li>
   <li>(OPTIONAL) 1x 2PIN JST connector (male and female) - to connect the telemeter and the external trigger button</li>
-  <li>1x 6PIN JST connector (male and female) - to connect the esp32-cam and the telemeter</li>
+  <li>1x 4PIN JST connector (male and female) - to connect the esp32-cam and the telemeter</li>
   <li>2x ESP32-CAM boards with 1x camera attached</li>
   <li>1x ESP32-CAM MB or an USB TTL-UART Adapter to upload the code (CP2101, CH340, FTDI FT232 etc)</li>
   <li>Micro USB to USB-A for uploading the code (or USB-C if your esp-cam has it)</li>
@@ -132,33 +132,13 @@ Laser sensor has 2 traces you need to solder with thin wire.<br />
 <br />
 These traces will be used for I2C communication between the sensor and the esp32cam. They are used as SDA/SCL pins. <br />
 You will also need 3.3V and GND from this sensor. You can see the 3.3V pin on the left side, marked on the pcb with the 3.3V symbol. GND pin is on the opposite end.
-
-Pinout of the FFC (left to right):
-
-```
-VCC (3.3V)
-VCC (3.3V)
-VCC (3.3V)
-GND
-GND
-GND
-I2C SDA
-I2C SCL
-display backlight
-Tx (not used)
-Rx (not used)
-Signal for buzzer
-Keyboard
-Power button - when pressed, set to 0.33V. Set to 0V works, too.
-Reference voltage for the keyboard?
-Keyboard (at reference 3.38V):
-0V Measure
-1.12V Functíons (volumes, Pythagoras...)
-2.67V Beep on/off
-3.02V Reference button
-1.52V Continuous measurement
-2.56V Memory
-2.77V Unit
-2.35V Clear
-1.69V +/-
-```
+<br />
+<br />
+Use a 4PIN JST Connector to get the pins out (I Used a 6PIN for debugging too),
+<table>
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251103_020630.jpg" />
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251103_020720.jpg" />
+  </td>
+</table>
