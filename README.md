@@ -100,7 +100,7 @@ Due to the lack of gpio pins and not having a gpio extender, 2x esp-cam boards h
 ## Wiring Setup
 You need to disassemble the Parkside Telemeter. Inside you will find the display, the keyboard module and the laser sensor.<br />
 Laser sensor has 2 traces you need to solder with thin wire.<br />
-<img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/F61A1IALXEP88GH.webp" />
+<img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/gnd-33-sda-scl.jpg" />
 <br />
 These traces will be used for I2C communication between the sensor and the esp32cam. They are used as SDA/SCL pins. <br />
 You will also need 3.3V and GND from this sensor. You can see the 3.3V pin on the left side, marked on the pcb with the 3.3V symbol. GND pin is on the opposite end.
