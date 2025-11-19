@@ -143,3 +143,12 @@ for securing the wires in place. I used Mitre-Appel bi-component glue. I know it
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251103_020720.jpg" />
   </td>
 </table>
+Colors used for marking the wires:
+```
+3.3v - red
+GND - black
+SDA - white
+SCL - blue 
+White/transparent - Keyboard (tested but left unused)
+Red/black - power (tested but left unused)
+```
