@@ -22,6 +22,7 @@ A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of b
 
 
 ## Pinout
+
 <table border="1" cellpadding="6" cellspacing="0">
     <tr>
         <th>ILI9341 Display</th>
