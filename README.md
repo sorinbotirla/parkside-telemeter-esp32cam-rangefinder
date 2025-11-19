@@ -164,10 +164,14 @@ Red/black - power (tested but left unused)
 <br />
 I used a perfboard and 2 ESP32 CAM talking to eachother via software serial. I needed more GPIO pins but I had to solder everything on the chip pins instead. Still, camera pins and sdcard pins were left usable.
 <br />
-Befire soldeeing the esp32 cam to the perfboard, solder the ILI9341 display directly to the esp32 chip pins, using thin wire, bypassing the board GPIO pins. Also, you need to solder connectors for a CP2101/FTDI FT232/CH340 usb serial interface because esp32 cam doesn't have a usb port (it has a MB with usb but it won't be used in this porject). Still, you will use the ports to upload the code. 
+Before soldeeing the esp32 cam to the perfboard, solder the ILI9341 display directly to the esp32 chip pins, using thin wire, bypassing the board GPIO pins.
 <br />
 <br />
-Pinout for the ESP32-cam serial connector (use one for each esp32 cam.
+Also, you need to solder connectors for a CP2101/FTDI FT232/CH340 usb serial interface because esp32 cam doesn't have a usb port (it has a MB with usb but it won't be used in this porject). Still, you will use the connector to upload the code with the USB serial interface.
+<br />
+<br />
+Pinout for the ESP32-cam serial connector (use one for each esp32 cam:
+<br />
 <table>
   <thead>
     <tr>
