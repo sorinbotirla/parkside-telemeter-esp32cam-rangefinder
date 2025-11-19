@@ -153,3 +153,47 @@ SCL - blue
 White/transparent - Keyboard (tested but left unused)
 Red/black - power (tested but left unused)
 ```
+<br />
+I used a perfboard and 2 ESP32 CAM talking to eachother via software serial. I needed more GPIO pins but I had to solder everything on the chip pins instead. Still, camera pins and sdcard pins were left usable.
+<table>
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204115.jpg" />
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204118.jpg" />
+  </td>
+</table>
+I have added a TP4056 and a step up converter for powering up using a 3.7V Li-Ion Battery. It outputs 5V 1A, enough for both esp32-cam, and the display. <br />
+I also added a switch for turning it on and off, a switch for putting both esp32-cam in download mode by shorting GPIO0 to GND. GPIO0 is connected between each esp32-cam. Also they share GND. <br />
+<table>
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204052.jpg" />
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204106.jpg" />
+  </td>
+</table>
+I added the ILI9341 displa to the first ESP32-cam (the one with the camera). And I checked everything works as intended.
+<table>
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204439.jpg" />
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251117_014612.jpg" />
+  </td>
+</table>
+
+In the telemeter.ino code you will also see a button being used to trigger measurements from the esp32. You can add it or rely on the telemeter's measure button.<br />
+
+## First prototype
+<table>
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194756.jpg" />
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194658.jpg" />
+  </td>
+</table>
+<table>
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194611.jpg" />
+  <td>
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194619.jpg" />
+  </td>
+</table>
