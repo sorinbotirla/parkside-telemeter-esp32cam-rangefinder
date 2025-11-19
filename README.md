@@ -128,7 +128,9 @@ Due to the lack of gpio pins and not having a gpio extender, 2x esp-cam boards h
 ## Wiring Setup
 You need to disassemble the Parkside Telemeter. Inside you will find the display, the keyboard module and the laser sensor.<br />
 Laser sensor has 2 traces you need to solder with thin wire.<br />
+<br />
 <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/gnd-33-sda-scl.jpg" />
+<br />
 <br />
 These traces will be used for I2C communication between the sensor and the esp32cam. They are used as SDA/SCL pins. <br />
 You will also need 3.3V and GND from this sensor. You can see the 3.3V pin on the left side, marked on the pcb with the 3.3V symbol. GND pin is on the opposite end.
@@ -154,7 +156,10 @@ White/transparent - Keyboard (tested but left unused)
 Red/black - power (tested but left unused)
 ```
 <br />
+<br />
 I used a perfboard and 2 ESP32 CAM talking to eachother via software serial. I needed more GPIO pins but I had to solder everything on the chip pins instead. Still, camera pins and sdcard pins were left usable.
+<br />
+<br />
 <table>
   <td>
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204115.jpg" />
@@ -162,8 +167,11 @@ I used a perfboard and 2 ESP32 CAM talking to eachother via software serial. I n
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204118.jpg" />
   </td>
 </table>
+<br />
+<br />
 I have added a TP4056 and a step up converter for powering up using a 3.7V Li-Ion Battery. It outputs 5V 1A, enough for both esp32-cam, and the display. <br />
 I also added a switch for turning it on and off, a switch for putting both esp32-cam in download mode by shorting GPIO0 to GND. GPIO0 is connected between each esp32-cam. Also they share GND. <br />
+<br />
 <table>
   <td>
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204052.jpg" />
@@ -171,7 +179,11 @@ I also added a switch for turning it on and off, a switch for putting both esp32
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204106.jpg" />
   </td>
 </table>
-I added the ILI9341 displa to the first ESP32-cam (the one with the camera). And I checked everything works as intended.
+<br />
+<br />
+I added the ILI9341 display to the first ESP32-cam (the one with the camera). And I checked everything works as intended.
+<br />
+<br />
 <table>
   <td>
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204439.jpg" />
@@ -179,7 +191,8 @@ I added the ILI9341 displa to the first ESP32-cam (the one with the camera). And
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251117_014612.jpg" />
   </td>
 </table>
-
+<br />
+<br />
 In the telemeter.ino code you will also see a button being used to trigger measurements from the esp32. You can add it or rely on the telemeter's measure button.<br />
 
 ## First prototype
@@ -197,3 +210,6 @@ In the telemeter.ino code you will also see a button being used to trigger measu
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194619.jpg" />
   </td>
 </table>
+<br />
+<br />
+Have fun :)
