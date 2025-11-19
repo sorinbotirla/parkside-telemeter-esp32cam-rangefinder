@@ -9,6 +9,14 @@
 #define BTN_MEASURE   14
 #define BTN_POWER     15
 
+#define BTN_CONT 12
+const unsigned long BTN_DEBOUNCE_MS = 40;
+int btnLastReading = HIGH;
+int btnStableState = HIGH;
+unsigned long btnLastChangeTime = 0;
+
+bool prevBtn = HIGH;
+
 // UART2 (TX2 to the camera+TFT board)
 #define UART2_TX_PIN  16
 #define UART2_RX_PIN  17   // unused but required
@@ -147,15 +155,67 @@ void setup() {
   pinMode(BTN_MEASURE, INPUT);
   pinMode(BTN_POWER, INPUT);
 
+  pinMode(BTN_CONT, INPUT_PULLUP);
+
   memset(packet_incoming, 0, BUFSIZE);
   memset(packet_last, 0, BUFSIZE);
   in_idx = 0;
   packet_ready = false;
 
+  pinMode(PLEM_SDA, INPUT);
+  pinMode(PLEM_SCL, INPUT);
+  delay(200); // let everything settle
   Wire.onReceive(onReceive);
   Wire.begin((uint8_t)PLEM_I2C_ADDR, PLEM_SDA, PLEM_SCL, 400000);
 
   Serial.println("Telemeter board ready. Type 'help' for commands.");
+}
+
+void handleContinuousButton() {
+  int reading = digitalRead(BTN_CONT);
+  unsigned long now = millis();
+
+  // If the raw reading changed, reset debounce timer
+  if (reading != btnLastReading) {
+    btnLastChangeTime = now;
+    btnLastReading = reading;
+  }
+
+  // If it has been stable long enough and differs from stable state,
+  // treat it as a real change
+  if ((now - btnLastChangeTime) > BTN_DEBOUNCE_MS && reading != btnStableState) {
+    btnStableState = reading;
+
+    // Button is wired to GND, so LOW means pressed
+    if (btnStableState == LOW) {
+      continuousMode = !continuousMode;
+      Serial.print("Continuous mode: ");
+      Serial.println(continuousMode ? "ON" : "OFF");
+    }
+  }
+}
+
+void handleMeasureButton() {
+  int reading = digitalRead(BTN_CONT);
+  unsigned long now = millis();
+
+  // Debounce raw changes
+  if (reading != btnLastReading) {
+    btnLastChangeTime = now;
+    btnLastReading = reading;
+  }
+
+  // If stable long enough and changed from stable state
+  if ((now - btnLastChangeTime) > BTN_DEBOUNCE_MS && reading != btnStableState) {
+    btnStableState = reading;
+
+    // LOW = button pressed
+    if (btnStableState == LOW) {
+      // Perform a single measure action
+      pressMeasure();
+      Serial.println("Button measure");
+    }
+  }
 }
 
 // ================== LOOP ==================
@@ -227,4 +287,7 @@ void loop() {
     pressMeasure();
     lastKeepAliveMs = millis();
   }
+
+  // ---- BUTTON HANDLER (debounced) ----
+  handleMeasureButton();
 }
