@@ -97,5 +97,37 @@ A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of b
 ## Code Setup
 Due to the lack of gpio pins and not having a gpio extender, 2x esp-cam boards have been used. In this repository are 2 .ino files, cameradisplay.ino is for the esp-cam handling the camera and the display, telemeter.ino is for the esp-cam handling the telemeter data.
 
-## Wiring Setup - To Be Added
-More info to be added soon (wiring the telemeter, using the binoculars, 3d models for printing the case and mount, etc)
+## Wiring Setup
+You need to disassemble the Parkside Telemeter. Inside you will find the display, the keyboard module and the laser sensor.<br />
+Laser sensor has 2 traces you need to solder with thin wire.<br />
+<img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/F61A1IALXEP88GH.webp" />
+<br />
+These traces will be used for I2C communication between the sensor and the esp32cam. They are used as SCL / SDA pins. <br />
+
+Pinout of the FFC (left to right):
+
+VCC (3.3V)
+VCC (3.3V)
+VCC (3.3V)
+GND
+GND
+GND
+I2C SDA
+I2C SCL
+display backlight
+Tx (not used)
+Rx (not used)
+Signal for buzzer
+Keyboard
+Power button - when pressed, set to 0.33V. Set to 0V works, too.
+Reference voltage for the keyboard?
+Keyboard (at reference 3.38V):
+0V Measure
+1.12V Functíons (volumes, Pythagoras...)
+2.67V Beep on/off
+3.02V Reference button
+1.52V Continuous measurement
+2.56V Memory
+2.77V Unit
+2.35V Clear
+1.69V +/-
