@@ -106,6 +106,7 @@ These traces will be used for I2C communication between the sensor and the esp32
 
 Pinout of the FFC (left to right):
 
+```
 VCC (3.3V)
 VCC (3.3V)
 VCC (3.3V)
@@ -131,3 +132,4 @@ Keyboard (at reference 3.38V):
 2.77V Unit
 2.35V Clear
 1.69V +/-
+```
