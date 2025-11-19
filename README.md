@@ -11,6 +11,8 @@ Many thanks to <a href="https://github.com/pavel-rybnicek">Pavel Rybnicek</a> fo
 <ol>
   <li>1x Parkside PLEM-50-C3 laser telemeter (you will cut some holes in the case but it will be also be still usable as standalone)</li>
   <li>1x side micro switch (to turn on/off the beeping speaker</li>
+  <li>1x side micro switch for putting both ESP32-cam into download mode</li>
+  <li>2x 6PIN dupont connectors for uploading the code wkth a USB serial interface on each ESP32-cam</li>
   <li>(OPTIONAL) a single tap button, for external measure triggering</li>
   <li>(OPTIONAL) 1x 2PIN JST connector (male and female) - to connect the telemeter and the external trigger button</li>
   <li>1x 4PIN JST connector (male and female) - to connect the esp32-cam and the telemeter</li>
@@ -19,10 +21,16 @@ Many thanks to <a href="https://github.com/pavel-rybnicek">Pavel Rybnicek</a> fo
   <li>Micro USB to USB-A for uploading the code (or USB-C if your esp-cam has it)</li>
   <li>1x 2.8 inch ILI9341 display (touch not needed)</li>
   <li>very thin wire to solder everything</li>
-  <li>solder iron, solder wire and flux</li>
+  <li>soldering iron, solder wire and flux</li>
   <li>A pair of binoculars</li>
   <li>3D printer and PLA filament or duct tape to attach everything together</li>
   <li>Arduino IDE and ESP32 Library and json installed</li>
+  <li>TP4056 battery charging module</li>
+  <li>3.7V to 5V Step up booster</li>
+  <li>Li-Ion rechargeable battery</li>
+  <li>2x kOhm resistors (each one on SDA/SCL in series)</li>
+  <li>100uF electrolytic capacitor (between gnd and 5v rail</li>
+  <li>2x 100nF ceramic capacitor (one between 5v and gnd rail, one between the esp32 measure button pins)</li>
 </ol>
 
 
@@ -162,9 +170,9 @@ Red/black - power (tested but left unused)
 ```
 <br />
 <br />
-I used a perfboard and 2 ESP32 CAM talking to eachother via software serial. I needed more GPIO pins but I had to solder everything on the chip pins instead. Still, camera pins and sdcard pins were left usable.
+I have used a perfboard and 2 ESP32 CAM talking to eachother via software serial. I needed more GPIO pins but I had to solder everything on the chip pins instead. Still, camera pins and sdcard pins were left usable.
 <br />
-Before soldeeing the esp32 cam to the perfboard, solder the ILI9341 display directly to the esp32 chip pins, using thin wire, bypassing the board GPIO pins.
+Before soldering the esp32 cam to the perfboard, solder the ILI9341 display directly to the esp32 chip pins, using thin wire, bypassing the board GPIO pins.
 <br />
 <br />
 Also, you need to solder connectors for a CP2101/FTDI FT232/CH340 usb serial interface because esp32 cam doesn't have a usb port (it has a MB with usb but it won't be used in this porject). Still, you will use the connector to upload the code with the USB serial interface.
