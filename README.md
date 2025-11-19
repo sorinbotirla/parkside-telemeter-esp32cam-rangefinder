@@ -2,6 +2,10 @@
 <a href="https://www.youtube.com/shorts/rriwwwzv8iQ"><img src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/esp32rangefinderparkside.jpg" /></a>
 A simple rangefinder having the Parkside PLEM-50-C3 laser telemeter, a pair of binoculars, an ILI9341 2.8 inch Display and 2x ESP32-CAM to measure distance exactly on the right spot.
 
+## Merits & recognition
+Many thanks to <a href="https://github.com/pavel-rybnicek">Pavel Rybnicek</a> for publishing a little documentation about the sensor wiring. More about that on his repository at <a href="https://github.com/pavel-rybnicek/esphome-parkside-plem-50-c3
+">https://github.com/pavel-rybnicek/esphome-parkside-plem-50-c3</a>
+
 ## Bill of Materials (BOM)
 <ol>
   <li>1x Parkside PLEM-50-C3 laser telemeter (you will cut some holes in the case but it will be also be still usable as standalone)</li>
