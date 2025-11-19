@@ -30,7 +30,6 @@ static uint8_t packet_last[BUFSIZE];
 String lastDecodedValue = "";
 String lastSentValue    = "";
 
-bool continuousMode = false;
 bool keepAlive      = false;
 unsigned long lastKeepAliveMs = 0;
 
@@ -138,13 +137,21 @@ void printHelp() {
   Serial.println();
   Serial.println("Available commands:");
   Serial.println("  measure");
-  Serial.println("  continuous start");
-  Serial.println("  continuous stop");
   Serial.println("  power");
   Serial.println("  keepalive start");
   Serial.println("  keepalive stop");
   Serial.println("  help");
   Serial.println();
+}
+
+void reinitI2C() {
+    Wire.end();
+    delay(10);
+    pinMode(PLEM_SDA, INPUT);
+    pinMode(PLEM_SCL, INPUT);
+    delay(10);
+    Wire.begin((uint8_t)PLEM_I2C_ADDR, PLEM_SDA, PLEM_SCL, 400000);
+    Wire.onReceive(onReceive);
 }
 
 // ================== SETUP ==================
@@ -156,6 +163,9 @@ void setup() {
   pinMode(BTN_POWER, INPUT);
 
   pinMode(BTN_CONT, INPUT_PULLUP);
+  btnLastReading = digitalRead(BTN_CONT);
+  btnStableState = btnLastReading;
+  btnLastChangeTime = millis();
 
   memset(packet_incoming, 0, BUFSIZE);
   memset(packet_last, 0, BUFSIZE);
@@ -164,35 +174,10 @@ void setup() {
 
   pinMode(PLEM_SDA, INPUT);
   pinMode(PLEM_SCL, INPUT);
-  delay(200); // let everything settle
-  Wire.onReceive(onReceive);
-  Wire.begin((uint8_t)PLEM_I2C_ADDR, PLEM_SDA, PLEM_SCL, 400000);
+  // after Serial.begin and pin inits:
+  reinitI2C();
 
   Serial.println("Telemeter board ready. Type 'help' for commands.");
-}
-
-void handleContinuousButton() {
-  int reading = digitalRead(BTN_CONT);
-  unsigned long now = millis();
-
-  // If the raw reading changed, reset debounce timer
-  if (reading != btnLastReading) {
-    btnLastChangeTime = now;
-    btnLastReading = reading;
-  }
-
-  // If it has been stable long enough and differs from stable state,
-  // treat it as a real change
-  if ((now - btnLastChangeTime) > BTN_DEBOUNCE_MS && reading != btnStableState) {
-    btnStableState = reading;
-
-    // Button is wired to GND, so LOW means pressed
-    if (btnStableState == LOW) {
-      continuousMode = !continuousMode;
-      Serial.print("Continuous mode: ");
-      Serial.println(continuousMode ? "ON" : "OFF");
-    }
-  }
 }
 
 void handleMeasureButton() {
@@ -218,8 +203,21 @@ void handleMeasureButton() {
   }
 }
 
+
 // ================== LOOP ==================
 void loop() {
+
+  // Try to recover I2C if no packet is ready
+  static unsigned long lastPacketTime = millis();
+
+  if (packet_ready) {
+      lastPacketTime = millis();
+  }
+  else if (millis() - lastPacketTime > 500) {
+      // No packet for 0.5s → real fault
+      reinitI2C();
+  }
+
 
   // ---- READ TELEMETRY PACKET ----
   uint8_t pkt[BUFSIZE];
@@ -251,14 +249,6 @@ void loop() {
     else if (cmd == "measure") {
       pressMeasure();
     }
-    else if (cmd == "continuous start") {
-      continuousMode = true;
-      Serial.println("Continuous mode ON");
-    }
-    else if (cmd == "continuous stop") {
-      continuousMode = false;
-      Serial.println("Continuous mode OFF");
-    }
     else if (cmd == "power") {
       pressPower();
     }
@@ -276,11 +266,6 @@ void loop() {
     }
   }
 
-  // ---- CONTINUOUS MODE ----
-  if (continuousMode) {
-    pressMeasure();
-    delay(400);
-  }
 
   // ---- KEEPALIVE MODE ----
   if (keepAlive && millis() - lastKeepAliveMs > 30000) {
