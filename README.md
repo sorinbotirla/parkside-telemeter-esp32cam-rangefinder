@@ -142,7 +142,7 @@ You will also need 3.3V and GND from this sensor. You can see the 3.3V pin on th
 <br />
 <br />
 Use a 4PIN JST Connector to get the pins out (I Used a 6PIN for debugging too). You can use epoxy, bi-component glue or anything else you have
-for securing the wires in place. I used Mitre-Appel bi-component glue. I know it's messy, but the wires won't go anywhere else.
+for securing the wires in place. I used Mitre-Apel bi-component glue. I know it's messy, but the wires won't go anywhere else.
 <table>
   <td>
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251103_020630.jpg" />
@@ -163,6 +163,57 @@ Red/black - power (tested but left unused)
 <br />
 <br />
 I used a perfboard and 2 ESP32 CAM talking to eachother via software serial. I needed more GPIO pins but I had to solder everything on the chip pins instead. Still, camera pins and sdcard pins were left usable.
+<br />
+Befire soldeeing the esp32 cam to the perfboard, solder the ILI9341 display directly to the esp32 chip pins, using thin wire, bypassing the board GPIO pins. Also, you need to solder connectors for a CP2101/FTDI FT232/CH340 usb serial interface because esp32 cam doesn't have a usb port (it has a MB with usb but it won't be used in this porject). Still, you will use the ports to upload the code. 
+<br />
+<br />
+Pinout for the ESP32-cam serial connector (use one for each esp32 cam.
+<table>
+  <thead>
+    <tr>
+      <th>
+        ESP32
+      </th>
+      <th>
+        USB Serial Interface
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        5V
+      </td>
+      <td>
+        5V
+      </td>
+    </tr>
+    <tr>
+      <td>
+        GND
+      </td>
+      <td>
+        GND
+      </td>
+    </tr>
+    <tr>
+      <td>
+        UDT
+      </td>
+      <td>
+        RX
+      </td>
+    </tr>
+    <tr>
+      <td>
+        UDR
+      </td>
+      <td>
+        TX
+      </td>
+    </tr>
+  </tbody>
+</table>
 <br />
 <br />
 <table>
