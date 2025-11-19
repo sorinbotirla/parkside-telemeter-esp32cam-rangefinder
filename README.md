@@ -134,7 +134,8 @@ These traces will be used for I2C communication between the sensor and the esp32
 You will also need 3.3V and GND from this sensor. You can see the 3.3V pin on the left side, marked on the pcb with the 3.3V symbol. GND pin is on the opposite end.
 <br />
 <br />
-Use a 4PIN JST Connector to get the pins out (I Used a 6PIN for debugging too),
+Use a 4PIN JST Connector to get the pins out (I Used a 6PIN for debugging too). You can use epoxy, bi-component glue or anything else you have
+for securing the wires in place. I used Mitre-Appel bi-component glue. I know it's messy, but the wires won't go anywhere else.
 <table>
   <td>
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251103_020630.jpg" />
