@@ -144,7 +144,8 @@ for securing the wires in place. I used Mitre-Appel bi-component glue. I know it
   </td>
 </table>
 Colors used for marking the wires:
-```
+
+```php
 3.3v - red
 GND - black
 SDA - white
