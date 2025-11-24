@@ -234,9 +234,11 @@ Pinout for the ESP32-cam serial connector (use one for each esp32 cam:
 <br />
 <table>
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204115.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204115.jpg" /><br />
+    The ESP32-CAM boards along with the charging circuit.
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204118.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204118.jpg" /><br />
+    Yes, the wires are messy, I've trimmed them afterwards.
   </td>
 </table>
 <br />
@@ -246,9 +248,11 @@ I also added a switch for turning it on and off, a switch for putting both esp32
 <br />
 <table>
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204052.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204052.jpg" /><br />
+    Battery connected
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204106.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204106.jpg" /><br />
+    The side switch for Download mode. It puts both ESP32CAM boards into download mode. When used, the screen should be white.
   </td>
 </table>
 <br />
@@ -258,9 +262,11 @@ Add the ILI9341 display to the first ESP32-cam (the one with the camera). Check 
 <br />
 <table>
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204439.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251116_204439.jpg" /><br />
+    Camera image shown on the display
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251117_014612.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251117_014612.jpg" /><br />
+    Measurements are sent from the telemeter to the ESP32CAM and shown on the bottom of the screen along with the past measurements (in green)
   </td>
 </table>
 <br />
@@ -278,9 +284,11 @@ Place the ESP32-CAM camera into one of the binoculars eyepiece. Try to align it 
 </table>
 <table>
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194611.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194611.jpg" /><br />
+    Binoculars eyepiece aligned with the camera
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194619.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194619.jpg" /><br />
+    Use zip ties to secure everything.
   </td>
 </table>
 <br />
