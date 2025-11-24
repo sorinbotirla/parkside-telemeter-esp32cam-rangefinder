@@ -266,7 +266,7 @@ Add the ILI9341 display to the first ESP32-cam (the one with the camera). Check 
     Camera image shown on the display
   <td>
     <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251117_014612.jpg" /><br />
-    Measurements are sent from the telemeter to the ESP32CAM and shown on the bottom of the screen along with the past measurements (in green)
+    Measurements are sent from the telemeter to the ESP32CAM and shown at the bottom of the screen along with the past measurements (in green)
   </td>
 </table>
 <br />
