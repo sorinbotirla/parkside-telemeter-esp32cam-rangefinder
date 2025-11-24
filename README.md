@@ -135,10 +135,14 @@ Many thanks to <a href="https://github.com/pavel-rybnicek">Pavel Rybnicek</a> fo
 
 </table>
 
-## Code Setup
+## Wiring Diagram
+
+<img width='100%' src='https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/parkside-esp-wiring-diagram.png' />
+
+## Arduino IDE Code
 Due to the lack of gpio pins and not having a gpio extender, 2x esp-cam boards have been used. In this repository are 2 .ino files, cameradisplay.ino is for the esp-cam handling the camera and the display, telemeter.ino is for the esp-cam handling the telemeter data.
 
-## Wiring Setup
+## Setup
 You need to disassemble the Parkside Telemeter. Inside you will find the display, the keyboard module and the laser sensor.<br />
 Laser sensor has 2 traces you need to solder with thin wire.<br />
 <br />
