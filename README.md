@@ -266,6 +266,8 @@ I added the ILI9341 display to the first ESP32-cam (the one with the camera). An
 <br />
 <br />
 In the telemeter.ino code you will also see a button being used to trigger measurements from the esp32. You can add it or rely on the telemeter's measure button.<br />
+Place the ESP32-CAM camera into one of the binoculars eyepiece. Try to align it carefully using a plastic support. I did cut 2 holes in a plastic piece but you can 3dprint your own. The image should be displayed on the screen along with the measured distance at the bottom.
+The right side numbers are past measurements.
 
 ## First prototype
 <table>
