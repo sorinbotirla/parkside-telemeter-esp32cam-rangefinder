@@ -277,18 +277,18 @@ Place the ESP32-CAM camera into one of the binoculars eyepiece. Try to align it 
 ## First prototype
 <table>
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194756.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194756.jpg" /><br />
+    Binoculars eyepiece aligned with the camera
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194658.jpg" />
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194658.jpg" /><br />
+    Use zip ties to secure everything.
   </td>
 </table>
 <table>
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194611.jpg" /><br />
-    Binoculars eyepiece aligned with the camera
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194611.jpg" />
   <td>
-    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194619.jpg" /><br />
-    Use zip ties to secure everything.
+    <img width="100%" src="https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/20251119_194619.jpg" />
   </td>
 </table>
 <br />
