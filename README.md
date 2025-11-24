@@ -137,6 +137,9 @@ Many thanks to <a href="https://github.com/pavel-rybnicek">Pavel Rybnicek</a> fo
 
 ## Wiring Diagram
 
+You may find a few resistors and capacitors added in the wiring diagram. They are used to filter some noise on SCL/SDA and add a little debouncing on the remote button. They also provide high current boost at the start up.<br /><br />
+To program the ESP32CAM boards, 2 6pin dupont connectors were added. Use a CP2101, FTDI FT232 or CH340 USB UART interface to upload the code into each ESP32CAM.
+
 <img width='100%' src='https://raw.githubusercontent.com/sorinbotirla/parkside-telemeter-esp32cam-rangefinder/refs/heads/main/images/parkside-esp-wiring-diagram.png' />
 
 ## Arduino IDE Code
